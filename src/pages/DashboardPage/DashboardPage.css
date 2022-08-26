@@ -1,0 +1,20 @@
+.dash-main {
+    flex-grow: 1;
+    padding-top: 18px;
+    padding-left: 107px;
+}
+.dash-main h1 {
+    font-size: 3em;
+    margin-bottom: 24px;
+}
+.dash-main span {
+    color: #ff0101;
+}
+.dash-main p {
+    font-size: 1.1em;
+    font-weight: 400;
+    margin: 11px 0;
+}
+.dash-cont {
+    display: flex;
+}
