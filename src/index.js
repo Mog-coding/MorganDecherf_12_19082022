@@ -12,7 +12,7 @@ root.render(
     <Router>
         <Routes>
             <Route path="/" element={<DashboardPage />} />
-            <Route path="/:para" element={<DashboardPage />} />
+            <Route path="/:id" element={<DashboardPage />} />
             <Route path="/404" element={<Error404Page />} />
         </Routes>
     </Router>
