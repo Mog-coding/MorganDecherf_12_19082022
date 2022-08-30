@@ -11,7 +11,6 @@ root.render(
     // <React.StrictMode>
     <Router>
         <Routes>
-            <Route path="/" element={<DashboardPage />} />
             <Route path="/:id" element={<DashboardPage />} />
             <Route path="/404" element={<Error404Page />} />
         </Routes>
