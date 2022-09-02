@@ -1,4 +1,4 @@
-import { UserModel } from '../models/userModel.js'
+import { UserModel } from '../models/userModel.js';
 
 export const getUserDatas = (userId) => {
     return fetch(`http://localhost:3000/user/${userId}`)
