@@ -4,6 +4,7 @@ import { getUserDatas, getUserActivity, getUserSessions, getUserPerformance } fr
 
 import Header from '../../components/Header/Header';
 import SideMenu from '../../components/SideMenu/SideMenu';
+import ActivityChart from '../../components/ActivityChart/ActivityChart';
 import { UserModel, ActivityModel } from '../../models/userModel.js';
 import './DashboardPage.css';
 
@@ -17,7 +18,7 @@ const DashboardPage = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        async function getUserFullData(){
+        async function getUserFullData() {
             const dataUser = await getUserDatas(id)
             setUserDatas(dataUser)
             const dataActivity = await getUserActivity(id)
@@ -36,21 +37,24 @@ const DashboardPage = () => {
             {console.log('comp render')}
             {!isLoading ? (
                 <>
-                    {console.log("loading ok",isLoading, userDatas)}
+                    {console.log("loading ok", isLoading, userDatas)}
                     <Header />
                     <div className="dash-cont">
                         <SideMenu />
                         <main className="dash-main">
                             <h1>
-                                Bonjour <span>{""}</span>
+                                Bonjour <span>{userDatas.userInfos.firstName}</span>
                             </h1>
                             <p>
                                 Félicitation ! Vous avez explosé vos objectifs
                                 hier 👏
                             </p>
                             <div>para: {id}</div>
+                            <div className="chart">
+                                <ActivityChart />
+                            </div>
                         </main>
-                        <div></div>
+
                     </div>
                 </>
             ) : (
