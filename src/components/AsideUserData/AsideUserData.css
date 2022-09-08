@@ -1,0 +1,5 @@
+.SectionAsideUserData{
+    background-color:rgb(177, 212, 200);
+    display: flex;
+    flex-grow: 1;
+}

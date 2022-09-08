@@ -5,6 +5,7 @@ import { getUserDatas, getUserActivity, getUserSessions, getUserPerformance } fr
 import Header from '../../components/Header/Header';
 import SideMenu from '../../components/SideMenu/SideMenu';
 import ActivityChart from '../../components/ActivityChart/ActivityChart';
+import AsideUserData from '../../components/AsideUserData/AsideUserData';
 import { UserModel, ActivityModel } from '../../models/userModel.js';
 import './DashboardPage.css';
 
@@ -37,25 +38,39 @@ const DashboardPage = () => {
             {console.log('comp render')}
             {!isLoading ? (
                 <>
-                    {console.log("loading ok", isLoading, userDatas)}
+                    {console.log("loading ok", isLoading, userActivity.sessions)}
                     <Header />
-                    <div className="dash-cont">
+                    <div className="dash-global-cont">
                         <SideMenu />
-                        <main className="dash-main">
-                            <h1>
-                                Bonjour <span>{userDatas.userInfos.firstName}</span>
-                            </h1>
-                            <p>
-                                Félicitation ! Vous avez explosé vos objectifs
-                                hier 👏
-                            </p>
-                            <div>para: {id}</div>
-                            <div className="chart">
-                                <ActivityChart />
-                            </div>
-                        </main>
-
+                        <div className="dash-middle-cont">
+                            <main className="dash-main">
+                                <h1>
+                                    Bonjour <span>{userDatas.userInfos.firstName}</span>
+                                </h1>
+                                <p>
+                                    Félicitation ! Vous avez explosé vos objectifs
+                                    hier 👏
+                                </p>
+                            </main>
+                            <section>
+                                <ActivityChart dataActivity={userActivity.sessions} />
+                            </section>
+                            <section className="chart3">
+                                3 chart
+                            </section>
+                        </div>
+                        <AsideUserData />
                     </div>
+
+
+
+
+
+                    {/* <div className="sup">
+                        <div className="chart-title">Activité quotidienne</div>
+                        <div><ActivityChart dataActivity={userActivity.sessions} /></div>
+                    </div> */}
+
                 </>
             ) : (
                 <>

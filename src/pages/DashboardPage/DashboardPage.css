@@ -1,5 +1,5 @@
 .dash-main {
-    flex-grow: 1;
+    max-height: 235px;
     padding-top: 18px;
     padding-left: 107px;
 }
@@ -15,6 +15,31 @@
     font-weight: 400;
     margin: 11px 0;
 }
-.dash-cont {
+.dash-global-cont {
     display: flex;
 }
+.dash-middle-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+
+
+
+.chart3{
+    height: 300px;
+    width: 800px;
+    background-color:cornflowerblue;
+}
+/* .sup{
+    position: relative;
+    height: 267px;
+    max-width: 770px;
+    background-color: #fbfbfb;
+}
+.chart-title{
+    position: absolute;
+    top: 2px;
+} */

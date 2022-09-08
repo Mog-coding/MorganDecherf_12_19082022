@@ -1,7 +1,10 @@
 .sideMenu-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
     position: relative;
     width: 117px;
-    height: 100vh;
     box-shadow: 4px 0 4px -5px grey;
     background-color: black;
 }
@@ -9,21 +12,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 260px;
-    padding-bottom: 340px;
+    padding-bottom: 80px;
+    /* padding-top: 260px;
+    padding-bottom: 340px; */
 }
 .sideMenu-nav img {
     padding-bottom: 20px;
 }
 .sideMenu-copyright {
+    position: absolute;
+    bottom: 125px;
+    right: -10px;
+  
     transform: rotate(-90deg);
 
     white-space: nowrap;
     background-color: black;
-
-    position: absolute;
-    bottom: 125px;
-    right: -10px;
 
     font-size: 0.8em;
     color: white;
