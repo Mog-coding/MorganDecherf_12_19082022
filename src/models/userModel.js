@@ -1,11 +1,10 @@
-/* UserModel */
 export class UserModel {
     constructor(userJson) {
         if (userJson) {
-            this.id = userJson.data.id;
-            this.keyData = new KeyDataModel(userJson.data.keyData);
-            this.todayScore = userJson.data.todayScore || userJson.data.score;
-            this.userInfos = new UserInfosModel(userJson.data.userInfos);
+            this.id = userJson.id;
+            this.keyData = new KeyDataModel(userJson.keyData);
+            this.todayScore = userJson.todayScore || userJson.score;
+            this.userInfos = new UserInfosModel(userJson.userInfos);
         }
     }
 }
@@ -22,16 +21,5 @@ class UserInfosModel {
         this.firstName = userInfoJson.firstName;
         this.lastName = userInfoJson.lastName;
         this.age = userInfoJson.age;
-    }
-}
-
-
-/* AcivityModel */
-export class ActivityModel {
-    constructor(activityJSON) {
-        if (activityJSON) {
-            this.id = activityJSON.id;
-            this.sessions = activityJSON.sessions;
-        }
     }
 }
