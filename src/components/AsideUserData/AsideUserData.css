@@ -1,5 +1,23 @@
 .SectionAsideUserData{
-    background-color:rgb(177, 212, 200);
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     flex-grow: 1;
+}
+.empBloc{
+    height: 235px;
+}
+.userDataCardsCont{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 90px;
+}
+.userDataCards{
+    height: 125px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 39px;
+    background-color: lightgrey;
+    /* background-color: #fbfbfb; */
 }
