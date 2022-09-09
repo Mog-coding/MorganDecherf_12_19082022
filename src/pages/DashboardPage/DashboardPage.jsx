@@ -5,7 +5,7 @@ import { getUserDatas, getUserActivity, getUserSessions, getUserPerformance } fr
 import Header from '../../components/Header/Header';
 import SideMenu from '../../components/SideMenu/SideMenu';
 import ActivityChart from '../../components/ActivityChart/ActivityChart';
-import AsideUserData from '../../components/AsideUserData/AsideUserData';
+import UserDataBoard from '../../components/UserDataBoard/UserDataBoard';
 import { UserModel, ActivityModel } from '../../models/userModel.js';
 import './DashboardPage.css';
 
@@ -42,7 +42,7 @@ const DashboardPage = () => {
                     <Header />
                     <div className="dash-global-cont">
                         <SideMenu />
-                        <div className="dash-middle-cont">
+                        <div className="dash-main-cont">
                             <main className="dash-main">
                                 <h1>
                                     Bonjour <span>{userDatas.userInfos.firstName}</span>
@@ -52,17 +52,23 @@ const DashboardPage = () => {
                                     hier 👏
                                 </p>
                             </main>
-                            <section>
-                                <ActivityChart dataActivity={userActivity.sessions} />
-                            </section>
-                            <section className="chart3">
-                                3 chart
-                            </section>
+                            <div className="chartsBoardCont">
+                                <section className="sectionCharts">
+                                    <div>
+                                    <ActivityChart dataActivity={userActivity.sessions} />
+                                    </div>
+                                    <div className="chart3">
+                                    </div>
+                                </section>
+                                <UserDataBoard />
+                            </div>
                         </div>
-                        <AsideUserData />
                     </div>
 
-
+                    {/*  
+                        <ActivityChart dataActivity={userActivity.sessions} />
+                        <section className="chart3">
+                    */}
 
 
 

@@ -1,14 +1,12 @@
-import './AsideUserData.css'
+import './UserDataBoard.css'
 import caloriesIcon from '../../assets/icons/userData/calories-icon.svg';
 import carbsIcon from '../../assets/icons/userData/carbs-icon.svg';
 import fatIcon from '../../assets/icons/userData/fat-icon.svg';
 import proteinIcon from '../../assets/icons/userData/protein-icon.svg';
 
-const AsideUserData = () => {
+const UserDataBoard = () => {
     return (
         <section className='SectionAsideUserData'>
-            <div className="empBloc">
-            </div>
             <div className="userDataCardsCont">
                 <div className='userDataCards'>
                     <img src={caloriesIcon} alt="" />
@@ -44,4 +42,4 @@ const AsideUserData = () => {
 
 }
 
-export default AsideUserData;
+export default UserDataBoard;

@@ -17,15 +17,22 @@
 }
 .dash-global-cont {
     display: flex;
+    height: 100vh;
 }
-.dash-middle-cont {
+.dash-main-cont {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    flex-grow: 1;
 }
-
-
+.chartsBoardCont {
+    display: flex;
+    padding-left: 107px;
+}
+.sectionCharts {
+    display: flex;
+    flex-direction: column;
+}
 
 
 .chart3{
