@@ -1,6 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getUserDatas, getUserActivity, getUserSessions, getUserPerformance } from '../../service/apiService.js';
+import {
+    getUserDatas,
+    getUserActivity,
+    getUserSessions,
+    getUserPerformance,
+} from '../../service/apiService.js';
 
 import Header from '../../components/Header/Header';
 import SideMenu from '../../components/SideMenu/SideMenu';
@@ -12,7 +17,6 @@ import './DashboardPage.css';
 const DashboardPage = () => {
     const { id } = useParams();
     const [userDatas, setUserDatas] = useState([]);
-    // const [userDatas, setUserDatas] = useState(new UserModel());
     const [userActivity, setUserActivity] = useState([]);
     const [userSessions, setUserSessions] = useState([]);
     const [userPerformance, setUserPerformance] = useState([]);
@@ -20,17 +24,17 @@ const DashboardPage = () => {
 
     useEffect(() => {
         async function getUserFullData() {
-            const dataUser = await getUserDatas(id)
-            setUserDatas(dataUser)
-            const dataActivity = await getUserActivity(id)
-            setUserActivity(dataActivity)
-            const dataSessions = await getUserSessions(id)
-            setUserSessions(dataSessions)
-            const dataPerformance = await getUserPerformance(id)
-            setUserPerformance(dataPerformance)
-            setIsLoading(false)
+            const dataUser = await getUserDatas(id);
+            setUserDatas(dataUser);
+            const dataActivity = await getUserActivity(id);
+            setUserActivity(dataActivity);
+            const dataSessions = await getUserSessions(id);
+            setUserSessions(dataSessions);
+            const dataPerformance = await getUserPerformance(id);
+            setUserPerformance(dataPerformance);
+            setIsLoading(false);
         }
-        getUserFullData()
+        getUserFullData();
     }, [id]);
 
     return (
@@ -38,45 +42,40 @@ const DashboardPage = () => {
             {console.log('comp render')}
             {!isLoading ? (
                 <>
-                    {console.log("loading ok", isLoading, userActivity.sessions)}
+                    {console.log(
+                        'loading ok',
+                        isLoading,
+                        userActivity.sessions
+                    )}
                     <Header />
                     <div className="dash-global-cont">
                         <SideMenu />
                         <div className="dash-main-cont">
                             <main className="dash-main">
                                 <h1>
-                                    Bonjour <span>{userDatas.userInfos.firstName}</span>
+                                    Bonjour{' '}
+                                    <span>{userDatas.userInfos.firstName}</span>
                                 </h1>
                                 <p>
-                                    Félicitation ! Vous avez explosé vos objectifs
-                                    hier 👏
+                                    Félicitation ! Vous avez explosé vos
+                                    objectifs hier 👏
                                 </p>
                             </main>
                             <div className="chartsBoardCont">
                                 <section className="sectionCharts">
-                                    <div>
-                                    <ActivityChart dataActivity={userActivity.sessions} />
+                                    <div className="chartActivity">
+                                        <ActivityChart
+                                            dataActivity={userActivity.sessions}
+                                        />
                                     </div>
-                                    <div className="chart3">
-                                    </div>
+                                    <div className="chart3"> hi</div>
                                 </section>
-                                <UserDataBoard />
+                                <div className="UserBoard">
+                                    <UserDataBoard dataUser={userDatas} />
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    {/*  
-                        <ActivityChart dataActivity={userActivity.sessions} />
-                        <section className="chart3">
-                    */}
-
-
-
-                    {/* <div className="sup">
-                        <div className="chart-title">Activité quotidienne</div>
-                        <div><ActivityChart dataActivity={userActivity.sessions} /></div>
-                    </div> */}
-
                 </>
             ) : (
                 <>

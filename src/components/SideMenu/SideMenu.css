@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    width: 117px;
+    min-width: 117px;
     box-shadow: 4px 0 4px -5px grey;
     background-color: black;
 }
@@ -20,7 +20,7 @@
     position: absolute;
     bottom: 125px;
     right: -10px;
-  
+
     transform: rotate(-90deg);
 
     white-space: nowrap;
@@ -29,3 +29,4 @@
     font-size: 0.8em;
     color: white;
 }
+

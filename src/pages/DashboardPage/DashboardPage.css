@@ -1,11 +1,24 @@
+.dash-global-cont {
+    display: flex;
+    height: 100vh;
+}
+
+.dash-main-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 85%;
+    margin-left: 7%;
+    margin-right: 5.5%;
+}
+
 .dash-main {
-    max-height: 235px;
-    padding-top: 18px;
-    padding-left: 107px;
+    padding-bottom: 16px;
 }
 .dash-main h1 {
     font-size: 3em;
-    margin-bottom: 24px;
+    margin: 0;
+    padding-bottom: 20px;
 }
 .dash-main span {
     color: #ff0101;
@@ -13,40 +26,37 @@
 .dash-main p {
     font-size: 1.1em;
     font-weight: 400;
-    margin: 11px 0;
+    margin: 0;
 }
-.dash-global-cont {
-    display: flex;
-    height: 100vh;
-}
-.dash-main-cont {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-}
+
 .chartsBoardCont {
     display: flex;
-    padding-left: 107px;
+    justify-content: space-between;
 }
 .sectionCharts {
     display: flex;
     flex-direction: column;
+    width: 74.2%;
 }
 
-
-.chart3{
+.chartActivity {
     height: 300px;
-    width: 800px;
-    background-color:cornflowerblue;
+    width: 100%;
 }
-/* .sup{
-    position: relative;
-    height: 267px;
-    max-width: 770px;
-    background-color: #fbfbfb;
+.chart3 {
+    height: 300px;
+    background-color: cornflowerblue;
 }
-.chart-title{
-    position: absolute;
-    top: 2px;
-} */
+.userBoard {
+    width: 23%;
+}
+
+@media screen and (max-width: 1150px) {
+    .dash-main-cont {
+        margin-left: 4%;
+        margin-right: 3%;
+    }
+    .dash-main {
+        padding-top: 0px;
+    }
+}
