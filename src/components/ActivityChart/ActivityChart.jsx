@@ -14,8 +14,8 @@ const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
             <div className="custom-tooltip">
-                <p className="label">{`${payload[1].value} kg`}</p>
-                <p className="label">{`${payload[0].value} Kcal`}</p>
+                <p className="label">{`${payload[0].value} kg`}</p>
+                <p className="label">{`${payload[1].value} Kcal`}</p>
             </div>
         );
     }
@@ -23,11 +23,11 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const ActivityChart = ({ dataActivity }) => {
-    console.log('data chart', dataActivity.sessions);
+    // console.log('data chart', dataActivity.sessions);
 
     return (
-        <ResponsiveContainer width="100%" aspect={2.88}>
-            <BarChart width={770} data={dataActivity.sessions} barGap={8}>
+        <ResponsiveContainer height={190} width='100%'>
+            <BarChart data={dataActivity.sessions} barGap={8}>
                 <CartesianGrid
                     vertical=""
                     stroke="#ccc"
@@ -64,51 +64,49 @@ const ActivityChart = ({ dataActivity }) => {
                     ]}
                 />
                 <Tooltip content={<CustomTooltip />} offset={60} />
-                <Legend
-                    height={85}
-                    verticalAlign="top"
-                    align="right"
-                    iconSize="8"
-                    payload={[
-                        {
-                            value: 'Poids (kg)',
-                            type: 'circle',
-                            id: 'ID01',
-                        },
-                        {
-                            value: 'Calories brûlées (kcal)',
-                            type: 'circle',
-                            id: 'ID02',
-                        },
-                    ]}
+                <Bar
+                    yAxisId="right-axis"
+                    type="monotone"
+                    dataKey="kilogram"
+                    barSize={7}
+                    fill="#282d30"
                 />
                 <Bar
                     yAxisId="left-axis"
                     type="monotone"
                     dataKey="calories"
                     barSize={7}
-                    fill="#282d30"
-                />
-                <Bar
-                    yAxisId="right-axis"
-                    type="monotone"
-                    dataKey="kilogram"
-                    barSize={7}
                     fill="#e60000"
                 />
             </BarChart>
         </ResponsiveContainer>
-    );
+    )
 };
 
 export default ActivityChart;
 
-{
-    /* <Bar
-yAxisId="left-axis"
-type="monotone"
-dataKey="oo"
-barSize={7}
-fill="#fbfbfb"
-/> */
-}
+{/* <div className="sup">
+                        <div className="chart-title">Activité quotidienne</div>
+                        <div><ActivityChart dataActivity={userActivity.sessions} /></div>
+                    </div> */}
+
+
+
+{/* <Legend
+    height={85}
+    verticalAlign="top"
+    align="right"
+    iconSize="8"
+    payload={[
+        {
+            value: 'Poids (kg)',
+            type: 'circle',
+            id: 'ID01',
+        },
+        {
+            value: 'Calories brûlées (kcal)',
+            type: 'circle',
+            id: 'ID02',
+        },
+    ]}
+/> */}
