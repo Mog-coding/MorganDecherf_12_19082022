@@ -7,12 +7,14 @@ import {
     getUserPerformance,
 } from '../../service/apiService.js';
 
+import './DashboardPage.css';
 import Header from '../../components/Header/Header';
 import SideMenu from '../../components/SideMenu/SideMenu';
 import ActivityChart from '../../components/ActivityChart/ActivityChart';
 import UserDataBoard from '../../components/UserDataBoard/UserDataBoard';
 import { UserModel, ActivityModel } from '../../models/userModel.js';
-import './DashboardPage.css';
+import ovalblack from '../../assets/icons/ovalblack.svg';
+import ovalred from '../../assets/icons/ovalred.svg';
 
 const DashboardPage = () => {
     const { id } = useParams();
@@ -53,8 +55,7 @@ const DashboardPage = () => {
                         <div className="dash-main-cont">
                             <main className="dash-main">
                                 <h1>
-                                    Bonjour{' '}
-                                    <span>{userDatas.userInfos.firstName}</span>
+                                    Bonjour <span>{userDatas.userInfos.firstName}</span>
                                 </h1>
                                 <p>
                                     Félicitation ! Vous avez explosé vos
@@ -64,14 +65,20 @@ const DashboardPage = () => {
                             <div className="chartsBoardCont">
                                 <section className="sectionCharts">
                                     <div className="chartActivity">
+                                        <div className="chartActivityTitle">Activité quotidienne
+                                            <div>
+                                                <span className="chartActivityTitleBlack"><img src={ovalblack} alt="" />Poids (kg)</span>
+                                                <span className="chartActivityTitleRed"><img src={ovalred} alt="" />Calories brûlées (kcal)</span>
+                                            </div>
+                                        </div>
                                         <ActivityChart
                                             dataActivity={userActivity.sessions}
                                         />
                                     </div>
                                     <div className="chart3"> hi</div>
                                 </section>
-                                <div className="UserBoard">
-                                    <UserDataBoard dataUser={userDatas} />
+                                <div className="userBoard">
+                                    <UserDataBoard dataUser={userDatas.keyData} />
                                 </div>
                             </div>
                         </div>
