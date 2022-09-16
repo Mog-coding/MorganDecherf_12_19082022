@@ -15,17 +15,17 @@ const doto = [
     {
         name: 'proteines',
         unit: 'g',
-        icon: carbsIcon
+        icon: proteinIcon
     },
     {
         name: 'glucides',
         unit: 'g',
-        icon: fatIcon
+        icon: carbsIcon
     },
     {
         name: 'lipides',
         unit: 'g',
-        icon: proteinIcon
+        icon: fatIcon
     }
 ]
 
