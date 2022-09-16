@@ -6,7 +6,6 @@ import {
     XAxis,
     YAxis,
     ResponsiveContainer,
-    Legend,
     Tooltip,
 } from 'recharts';
 
@@ -26,7 +25,7 @@ const ActivityChart = ({ dataActivity }) => {
     // console.log('data chart', dataActivity.sessions);
 
     return (
-        <ResponsiveContainer height={190} width='100%'>
+        <ResponsiveContainer height={190} width="100%">
             <BarChart data={dataActivity.sessions} barGap={8}>
                 <CartesianGrid
                     vertical=""
@@ -38,6 +37,7 @@ const ActivityChart = ({ dataActivity }) => {
                     tickLine=""
                     tickMargin={14}
                     stroke="#9b9eac"
+                    cornerRadius="50%"
                 />
                 <YAxis
                     yAxisId="left-axis"
@@ -63,13 +63,19 @@ const ActivityChart = ({ dataActivity }) => {
                         (dataMax) => Math.ceil(1.01 * dataMax),
                     ]}
                 />
-                <Tooltip content={<CustomTooltip />} offset={60} />
+                <Tooltip
+                    content={<CustomTooltip />}
+                    cursor={{ fill: 'rgba(223,223,223,0.6)' }}
+                    wrapperStyle={{ outline: 'none' }}
+                    offset={60}
+                />
                 <Bar
                     yAxisId="right-axis"
                     type="monotone"
                     dataKey="kilogram"
                     barSize={7}
                     fill="#282d30"
+                    radius={[4, 4, 0, 0]}
                 />
                 <Bar
                     yAxisId="left-axis"
@@ -77,36 +83,11 @@ const ActivityChart = ({ dataActivity }) => {
                     dataKey="calories"
                     barSize={7}
                     fill="#e60000"
+                    radius={[4, 4, 0, 0]}
                 />
             </BarChart>
         </ResponsiveContainer>
-    )
+    );
 };
 
 export default ActivityChart;
-
-{/* <div className="sup">
-                        <div className="chart-title">Activité quotidienne</div>
-                        <div><ActivityChart dataActivity={userActivity.sessions} /></div>
-                    </div> */}
-
-
-
-{/* <Legend
-    height={85}
-    verticalAlign="top"
-    align="right"
-    iconSize="8"
-    payload={[
-        {
-            value: 'Poids (kg)',
-            type: 'circle',
-            id: 'ID01',
-        },
-        {
-            value: 'Calories brûlées (kcal)',
-            type: 'circle',
-            id: 'ID02',
-        },
-    ]}
-/> */}

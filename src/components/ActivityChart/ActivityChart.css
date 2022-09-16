@@ -1,4 +1,4 @@
-.custom-tooltip{
+.custom-tooltip {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -6,7 +6,6 @@
     font-size: 0.6em;
     font-weight: normal;
     color: white;
-    padding: 2px 5px;
+    padding: 0px 2px;
     background-color: #e60000;
-    border: none;
 }
