@@ -12,9 +12,9 @@ import Header from '../../components/Header/Header';
 import SideMenu from '../../components/SideMenu/SideMenu';
 import ActivityChart from '../../components/ActivityChart/ActivityChart';
 import UserDataBoard from '../../components/UserDataBoard/UserDataBoard';
-import { UserModel, ActivityModel } from '../../models/userModel.js';
 import ovalblack from '../../assets/icons/ovalblack.svg';
 import ovalred from '../../assets/icons/ovalred.svg';
+import TodayScoreChart from '../../components/TodayScoreChart/TodayScoreChart.jsx';
 
 const DashboardPage = () => {
     const { id } = useParams();
@@ -75,7 +75,21 @@ const DashboardPage = () => {
                                             dataActivity={userActivity.sessions}
                                         />
                                     </div>
-                                    <div className="chart3"> hi</div>
+                                    <div className="chartCont">
+                                        <div className="chart1">1</div>
+                                        <div className="chart2">2</div>
+                                        <div className="chartToday">
+                                            <div className="chartTodayText">
+                                                <p className="chartTodayTitle">Score</p>
+                                                <div className="chartTodayLegend">
+                                                    <p className="chartTodayLegendScore">{`${userDatas.todayScore * 100}%`}</p>
+                                                    <p>de votre</p>
+                                                    <p>objectif</p>
+                                                </div>
+                                            </div>
+                                            <TodayScoreChart dataScore={userDatas.todayScore} />
+                                        </div>
+                                    </div>
                                 </section>
                                 <div className="userBoard">
                                     <UserDataBoard dataUser={userDatas.keyData} />

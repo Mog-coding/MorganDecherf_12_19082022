@@ -6,14 +6,16 @@
 .dash-main-cont {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 85%;
     margin-left: 7%;
     margin-right: 5.5%;
+    margin-top: 50px;
+    margin-bottom: 90px;
 }
 
 .dash-main {
-    padding-bottom: 16px;
+    padding-bottom: 25px;
 }
 .dash-main h1 {
     font-size: 3em;
@@ -38,18 +40,84 @@
     flex-direction: column;
     width: 74.2%;
 }
-
-.chartActivity {
-    height: 300px;
-    width: 100%;
-}
-.chart3 {
-    height: 300px;
-    background-color: cornflowerblue;
-}
 .userBoard {
     width: 23%;
 }
+
+/* chart Activity */
+.chartActivity {
+    height: 292px;
+    background-color: rgb(248, 243, 243);
+    padding: 25px 20px 0 30px;
+    border-radius: 6px;
+}
+.chartActivityTitle {
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.chartActivityTitleBlack {
+    padding-right: 30px;
+}
+.chartActivityTitle img {
+    padding-right: 5px;
+}
+.chartActivityTitle span {
+    color: #74798c;
+    font-size: 0.9em;
+}
+
+/* 3 charts container */
+.chartCont {
+    height: 290px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    box-sizing: border-box;
+}
+.chart1 {
+    background-color:azure;
+    width: 31%;
+}
+.chart2 {
+    background-color:lightblue;
+    width: 31%;
+}
+
+/* chart TodayScore */
+.chartToday {
+    position: relative;
+    height: 265px;
+    width: 31%;
+    background-color:rgb(248, 243, 243);
+    border-radius: 6px;
+}
+.chartTodayText {
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+}
+.chartTodayTitle{
+    margin: 27px 0 0 30px;
+}
+.chartTodayLegend{
+    padding-top: 27px;
+    text-align: center;
+}
+.chartTodayLegend p{
+    margin: 0;
+    color: #74798c;
+    padding-bottom: 5px;
+}
+.chartTodayLegend .chartTodayLegendScore{
+    font-size: 1.6em;
+    font-weight: bold;
+    padding-top: 33px;
+    padding-bottom: 4px;
+    color: black;
+}
+
 
 @media screen and (max-width: 1150px) {
     .dash-main-cont {
