@@ -6,7 +6,7 @@ import proteinIcon from '../../assets/icons/userData/protein-icon.svg';
 
 import DataBoard from '../DataBoard/DataBoard';
 
-const doto = [
+const boardData = [
     {
         name: 'calories',
         unit: 'kCal',
@@ -33,15 +33,18 @@ const UserDataBoard = ({ dataUser }) => {
 
     return (
         <section className="SectionAsideUserData">
-            {doto.map((el, index) => {
+            {boardData.map((el, index) => {
+
+                const arrDataUser = Object.entries(dataUser);
+
                 return (
                     <DataBoard
-                        dataUser={dataUser.calories} 
+                        dataUser={arrDataUser[index][1]}
                         boardIcon={el.icon}
                         boardUnit={el.unit}
                         boardName={el.name}
                         key={`${el.name}-${index}`}
-                        />
+                    />
                 )
             })}
         </section>
