@@ -75,16 +75,30 @@
     padding-top: 25px;
     box-sizing: border-box;
 }
-.chart1 {
-    background-color:azure;
+
+/* chart1 AverageSession */
+.chartAverageSession {
+    background-color:#ff0000;
     width: 31%;
+    border-radius: 6px;
 }
+.chartAverageSession p {
+    padding: 30px 0 0px 35px;
+    margin: 0;
+    color: #ff7d7d;
+    font-size: 0.9em;
+}
+
+
+
+
+
 .chart2 {
     background-color:lightblue;
     width: 31%;
+    border-radius: 6px;
 }
-
-/* chart TodayScore */
+/* chart3 TodayScore */
 .chartToday {
     position: relative;
     height: 265px;

@@ -1,5 +1,6 @@
 import { UserModel } from '../models/userModel.js';
 import { ActivityModel } from '../models/activityModel.js';
+import { AverageSessionsModel } from '../models/averageSessionsModel.js';
 
 export const getUserDatas = (userId) => {
     return fetch(`http://localhost:3000/user/${userId}`)
@@ -16,7 +17,7 @@ export const getUserActivity = (userId) => {
 export const getUserSessions = (userId) => {
     return fetch(`http://localhost:3000/user/${userId}/average-sessions`)
         .then((resp) => resp.json())
-        .then((data) => data);
+        .then(({data}) => new AverageSessionsModel(data));
 };
 
 export const getUserPerformance = (userId) => {

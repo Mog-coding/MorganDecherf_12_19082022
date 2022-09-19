@@ -1,0 +1,10 @@
+.chartAverageSession .custom-tooltip {
+    font-size: 0.6em;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+.chartAverageSession .custom-tooltip .label {
+    color: black;
+    padding: 6px;
+}
