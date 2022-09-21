@@ -20,7 +20,7 @@ const TodayScoreChart = ({ dataScore }) => {
                     innerRadius={78}
                     outerRadius={88}
                     paddingAngle={0}
-                    datakey="value"
+                    dataKey="value"
                     cornerRadius="50%"
                 >
                     <Cell fill="red" stroke="red" />
@@ -36,7 +36,7 @@ const TodayScoreChart = ({ dataScore }) => {
                     outerRadius={77}
                     fill="white"
                     paddingAngle={0}
-                    datakey="value"
+                    dataKey="value"
                 ></Pie>
             </PieChart>
         </ResponsiveContainer>
