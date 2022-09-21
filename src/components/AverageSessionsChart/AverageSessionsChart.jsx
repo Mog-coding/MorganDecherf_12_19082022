@@ -77,7 +77,7 @@ const AverageSessionsChart = ({ dataSessions }) => {
                     <YAxis
                         stroke="white"
                         domain={[(dataMin) => {
-                            if (dataMin === 0){ return -15 }else{ return Math.floor(0.8 * dataMin)}
+                            return dataMin === 0 ? -15 : Math.floor(0.8 * dataMin)
                         },
                         (dataMax) => Math.ceil(1.1 * dataMax),
                         ]}
