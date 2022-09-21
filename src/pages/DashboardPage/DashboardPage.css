@@ -94,7 +94,7 @@
 
 
 .chart2 {
-    background-color:lightblue;
+    background-color:#282d30;
     width: 31%;
     border-radius: 6px;
 }
@@ -142,3 +142,16 @@
         padding-top: 0px;
     }
 }
+@media screen and (min-height: 950px) {
+    .dash-main-cont {
+        margin-top: 4%;
+        margin-bottom: 8%;
+    }
+    .chartsBoardCont {
+        height: 76%
+        /* 66.5% */
+    }
+    .sectionCharts {
+      justify-content: space-between;
+    }
+} 

@@ -16,6 +16,7 @@ import ovalblack from '../../assets/icons/ovalblack.svg';
 import ovalred from '../../assets/icons/ovalred.svg';
 import TodayScoreChart from '../../components/TodayScoreChart/TodayScoreChart';
 import AverageSessionsChart from '../../components/AverageSessionsChart/AverageSessionsChart';
+import PerformanceChart from '../../components/PerformanceChart/PerformanceChart'
 
 const DashboardPage = () => {
     const { id } = useParams();
@@ -78,10 +79,12 @@ const DashboardPage = () => {
                                     </div>
                                     <div className="chartCont">
                                         <div className="chartAverageSession">
-                                        <p>Durée moyenne des sessions</p>
-                                        <AverageSessionsChart dataSessions={userSessions.sessions} />
+                                            <p>Durée moyenne des sessions</p>
+                                            <AverageSessionsChart dataSessions={userSessions.sessions} />
                                         </div>
-                                        <div className="chart2">2</div>
+                                        <div className="chart2">
+                                            <PerformanceChart dataPerformance={userPerformance} />
+                                        </div>
                                         <div className="chartToday">
                                             <div className="chartTodayText">
                                                 <p className="chartTodayTitle">Score</p>
