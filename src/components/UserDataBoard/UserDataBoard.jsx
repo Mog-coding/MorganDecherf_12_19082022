@@ -5,6 +5,7 @@ import fatIcon from '../../assets/icons/userData/fat-icon.svg';
 import proteinIcon from '../../assets/icons/userData/protein-icon.svg';
 
 import DataBoard from '../DataBoard/DataBoard';
+import PropTypes from 'prop-types';
 
 const boardData = [
     {

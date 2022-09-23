@@ -9,7 +9,6 @@ export class AverageSessionsModel {
 
 class AverageSessions {
     constructor(averageJSON) {
-        console.log(averageJSON)
         this.sessions = averageJSON.map((el) => {
             return {
                 day: numberIntoDay(el.day),
