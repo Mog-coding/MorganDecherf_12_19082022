@@ -5,5 +5,5 @@ export function Loader() {
         <div className="contLoader">
             <div className="loader"></div>
         </div>
-    );
+    )
 }

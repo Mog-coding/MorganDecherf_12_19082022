@@ -16,7 +16,8 @@ import ovalblack from '../../assets/icons/ovalblack.svg';
 import ovalred from '../../assets/icons/ovalred.svg';
 import TodayScoreChart from '../../components/TodayScoreChart/TodayScoreChart';
 import AverageSessionsChart from '../../components/AverageSessionsChart/AverageSessionsChart';
-import PerformanceChart from '../../components/PerformanceChart/PerformanceChart'
+import PerformanceChart from '../../components/PerformanceChart/PerformanceChart';
+import { Loader } from '../../service/Loader/Loader';
 
 const DashboardPage = () => {
     const { id } = useParams();
@@ -46,18 +47,14 @@ const DashboardPage = () => {
             {console.log('comp render')}
             {!isLoading ? (
                 <>
-                    {console.log(
-                        'loading ok',
-                        isLoading,
-                        userActivity.sessions
-                    )}
                     <Header />
                     <div className="dash-global-cont">
                         <SideMenu />
                         <div className="dash-main-cont">
                             <main className="dash-main">
                                 <h1>
-                                    Bonjour <span>{userDatas.userInfos.firstName}</span>
+                                    Bonjour{' '}
+                                    <span>{userDatas.userInfos.firstName}</span>
                                 </h1>
                                 <p>
                                     Félicitation ! Vous avez explosé vos
@@ -67,29 +64,41 @@ const DashboardPage = () => {
                             <div className="chartsBoardCont">
                                 <section className="sectionCharts">
                                     <div className="chartActivity">
-                                        <div className="chartActivityTitle">Activité quotidienne
+                                        <div className="chartActivityTitle">
+                                            Activité quotidienne
                                             <div>
-                                                <span className="chartActivityTitleBlack"><img src={ovalblack} alt="" />Poids (kg)</span>
-                                                <span className="chartActivityTitleRed"><img src={ovalred} alt="" />Calories brûlées (kcal)</span>
+                                                <span className="chartActivityTitleBlack">
+                                                    <img
+                                                        src={ovalblack}
+                                                        alt=""
+                                                    />
+                                                    Poids (kg)
+                                                </span>
+                                                <span className="chartActivityTitleRed">
+                                                    <img src={ovalred} alt="" />
+                                                    Calories brûlées (kcal)
+                                                </span>
                                             </div>
                                         </div>
-                                        <ActivityChart
-                                            dataActivity={userActivity.sessions}
-                                        />
+                                        <ActivityChart dataActivity={userActivity.sessions} />
                                     </div>
                                     <div className="chartCont">
                                         <div className="chartAverageSession">
                                             <p>Durée moyenne des sessions</p>
                                             <AverageSessionsChart dataSessions={userSessions.sessions} />
                                         </div>
-                                        <div className="chart2">
+                                        <div className="chartPerformance">
                                             <PerformanceChart dataPerformance={userPerformance} />
                                         </div>
                                         <div className="chartToday">
                                             <div className="chartTodayText">
-                                                <p className="chartTodayTitle">Score</p>
+                                                <p className="chartTodayTitle">
+                                                    Score
+                                                </p>
                                                 <div className="chartTodayLegend">
-                                                    <p className="chartTodayLegendScore">{`${userDatas.todayScore * 100}%`}</p>
+                                                    <p className="chartTodayLegendScore">{
+                                                    `${userDatas.todayScore * 100 }%`
+                                                        }</p>
                                                     <p>de votre</p>
                                                     <p>objectif</p>
                                                 </div>
@@ -107,11 +116,15 @@ const DashboardPage = () => {
                 </>
             ) : (
                 <>
-                    <div>wait</div>
+                    <Header />
+                    <div className="dash-global-cont">
+                        <SideMenu />
+                        <Loader />
+                    </div>
                 </>
             )}
         </>
-    );
+    )
 };
 
 export default DashboardPage;

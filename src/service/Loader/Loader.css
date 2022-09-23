@@ -3,10 +3,11 @@
     justify-content: center;
     align-items: center;
     margin: 40px 0;
+    width: 100%;
 }
 .loader {
     padding: 10px;
-    border: 6px solid #ff6060;
+    border: 10px solid red;
     border-bottom-color: transparent;
     border-radius: 22px;
     animation: rotateLoader 1s infinite linear;

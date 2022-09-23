@@ -4,6 +4,7 @@
     justify-content: center;
     position: relative;
     min-width: 117px;
+    min-height: 850px;
     box-shadow: 4px 0 4px -5px grey;
     background-color: black;
 }
@@ -29,4 +30,3 @@
     font-size: 0.8em;
     color: white;
 }
-

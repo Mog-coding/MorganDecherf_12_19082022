@@ -5,4 +5,11 @@ html {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-} 
+}
+
+* {
+    --main-color: #ff0000; 
+    --secondary-color: #fbfbfb;
+    --tertiary-color: #282d30;
+    --light-text-color: #74798c;
+}

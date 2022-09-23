@@ -2,8 +2,7 @@
     height: 125px;
     display: flex;
     align-items: center;
-    background-color: rgb(248, 243, 243);
-    /* background-color: #fbfbfb; */
+    background-color: var(--secondary-color);
     border-radius: 6px;
     padding-left: 30px;
 }
@@ -17,7 +16,7 @@
 }
 .userDataCardsLegend {
     margin: 7px 0;
-    color: #74798c;
+    color: var(--light-text-color);
 }
 
 @media screen and (max-width: 1250px) {
