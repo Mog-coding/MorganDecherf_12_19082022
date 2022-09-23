@@ -2,42 +2,60 @@ import { UserModel } from '../models/userModel.js';
 import { ActivityModel } from '../models/activityModel.js';
 import { AverageSessionsModel } from '../models/averageSessionsModel.js';
 import { UserPerformance } from '../models/userPerformance.js';
+import { checkPropTypes } from 'prop-types';
 
 const endPoint = 'http://localhost:3000/user/';
 
-export function getUserDatas(userId) {
-    const mocked = '/mockUser.json';
-
-    return fetch(userId === 'mock' ? `${mocked}` : `${endPoint}${userId}`)
-        .then((resp) => resp.json())
-        .then(({ data }) => new UserModel(data));
-}
-
-export function getUserActivity(userId) {
-    const path = '/activity';
-    const mocked = '/mockActivity.json';
-
-    return fetch(userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`)
-        .then((resp) => resp.json())
-        .then(({ data }) => new ActivityModel(data));
-}
-
-export function getUserSessions(userId) {
+export async function getUserSessions(userId) {
     const path = '/average-sessions';
     const mocked = '/mockAverageSession.json';
 
-    return fetch(userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`)
-        .then((resp) => resp.json())
-        .then(({ data }) => new AverageSessionsModel(data));
+    try {
+        const resp = await fetch(
+            userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`
+        );
+
+        if (resp.ok) {
+            const { data } = await resp.json();
+            return new AverageSessionsModel(data);
+        } else {
+            throw new Error(resp.status);
+        }
+    } catch (err) {
+        console.log(err);
+    }
 }
 
-export function getUserPerformance(userId) {
+export async function getUserDatas(userId) {
+    const mocked = '/mockUser.json';
+
+    const resp = await fetch(
+        userId === 'mock' ? `${mocked}` : `${endPoint}${userId}`
+    );
+    const { data } = await resp.json();
+    return new UserModel(data);
+}
+
+export async function getUserActivity(userId) {
+    const path = '/activity';
+    const mocked = '/mockActivity.json';
+
+    const resp = await fetch(
+        userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`
+    );
+    const { data } = await resp.json();
+    return new ActivityModel(data);
+}
+
+export async function getUserPerformance(userId) {
     const path = '/performance';
     const mocked = '/mockPerformance.json';
 
-    return fetch(userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`)
-        .then((resp) => resp.json())
-        .then(({ data }) => new UserPerformance(data.data, data.kind));
+    const resp = await fetch(
+        userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`
+    );
+    const { data } = await resp.json();
+    return new UserPerformance(data.data, data.kind);
 }
 
 /**
