@@ -1,0 +1,26 @@
+.homePageNav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.homePageNav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 160px;
+    margin: 150px 80px;
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    border-radius: 10px;
+    border: red solid 3px;
+}
+
+.homePageNav a:hover {
+    color: red;
+    background-color: white;
+    border: red solid 3px;
+}
