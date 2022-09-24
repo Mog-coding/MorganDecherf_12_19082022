@@ -1,4 +1,4 @@
-.userDataCards {
+.keyDataCards {
     height: 125px;
     display: flex;
     align-items: center;
@@ -6,27 +6,27 @@
     border-radius: 6px;
     padding-left: 30px;
 }
-.userDataCardsTextCont {
+.keyDataCardsTextCont {
     padding: 0 25px;
 }
-.userDataCardsText {
+.keyDataCardsText {
     font-size: 1.3em;
     margin: 0;
     color: black;
 }
-.userDataCardsLegend {
+.keyDataCardsLegend {
     margin: 7px 0;
     color: var(--light-text-color);
 }
 
 @media screen and (max-width: 1250px) {
-    .userDataCards {
+    .keyDataCards {
         padding-left: 20px;
     }
-    .userDataCardsTextCont {
+    .keyDataCardsTextCont {
         padding: 0 10px;
     }
-    .userDataCardsText {
+    .keyDataCardsText {
         font-size: 1.2em;
     }
 }

@@ -11,7 +11,7 @@ import './DashboardPage.css';
 import Header from '../../components/Header/Header';
 import SideMenu from '../../components/SideMenu/SideMenu';
 import ActivityChart from '../../components/ActivityChart/ActivityChart';
-import UserDataBoard from '../../components/UserDataBoard/UserDataBoard';
+import KeyDataBoard from '../../components/KeyDataBoard/KeyDataBoard';
 import ovalblack from '../../assets/icons/ovalblack.svg';
 import ovalred from '../../assets/icons/ovalred.svg';
 import TodayScoreChart from '../../components/TodayScoreChart/TodayScoreChart';
@@ -50,8 +50,8 @@ const DashboardPage = () => {
                     <Header />
                     <div className="dash-global-cont">
                         <SideMenu />
-                        <div className="dash-main-cont">
-                            <main className="dash-main">
+                        <main className="dash-main-cont">
+                            <div className="dash-main">
                                 <h1>
                                     Bonjour{' '}
                                     <span>{userDatas.userInfos.firstName}</span>
@@ -60,7 +60,7 @@ const DashboardPage = () => {
                                     Félicitation ! Vous avez explosé vos
                                     objectifs hier 👏
                                 </p>
-                            </main>
+                            </div>
                             <div className="chartsBoardCont">
                                 <section className="sectionCharts">
                                     <div className="chartActivity">
@@ -108,10 +108,10 @@ const DashboardPage = () => {
                                     </div>
                                 </section>
                                 <div className="userBoard">
-                                    <UserDataBoard dataUser={userDatas.keyData} />
+                                    <KeyDataBoard dataUser={userDatas.keyData} />
                                 </div>
                             </div>
-                        </div>
+                        </main>
                     </div>
                 </>
             ) : (
