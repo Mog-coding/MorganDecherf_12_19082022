@@ -8,13 +8,14 @@ import KeyData from '../KeyData/KeyData';
 import PropTypes from 'prop-types';
 
 /**
- * dataKey contains all datas of KeyData's component except keyData value 
- * @type {{name: string, unit: string, icon: string}}
+ * @description contains all datas of KeyData's component except keyData value 
+ * @type {{name: string, unit: string, icon: string}} 
  */
+
 const dataKey = [
     {
         name: 'calories',
-        unit: 'kCal',
+        unit: 'cal',
         icon: caloriesIcon
     },
     {
@@ -35,14 +36,12 @@ const dataKey = [
 ]
 
 /**
- * Component that imbricate severals keyData component's to form a keyData board
- * @param {{calories: number, glucides: number, lipides: number, proteines: number}} dataUser - value of keyData
- * @returns {React.ReactElement}
+ * @description Component that imbricate severals keyData component's to form a keyData board
+ * @param {object} dataUser - value of keyData
+ * @returns {ReactElement}
  */
 
 const KeyDataBoard = ({ dataUser }) => {
-
-    console.log(dataUser)
 
     return (
         <section className="SectionAsideKeyData">
@@ -67,6 +66,5 @@ const KeyDataBoard = ({ dataUser }) => {
 KeyDataBoard.propTypes = {
      dataUser: PropTypes.object.isRequired,
 };
-
 
 export default KeyDataBoard;
