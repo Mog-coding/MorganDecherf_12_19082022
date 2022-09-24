@@ -1,8 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
+/**
+ * @description component chart that displays the user's goal score for the day
+ * @param {number} dataScore today score
+ * @returns {ReactElement}
+ */
+
 const TodayScoreChart = ({ dataScore }) => {
-    
+   
     const data = [
         { name: 'bar1', value: dataScore * 100 },
         { name: 'bar2', value: 100 - dataScore * 100 },
@@ -40,7 +47,11 @@ const TodayScoreChart = ({ dataScore }) => {
                 ></Pie>
             </PieChart>
         </ResponsiveContainer>
-    );
+    )
+};
+
+ TodayScoreChart.propTypes = {
+    dataScore: PropTypes.object.isRequired,
 };
 
 export default TodayScoreChart;

@@ -1,4 +1,6 @@
+import React from 'react';
 import './ActivityChart.css';
+import PropTypes from 'prop-types';
 import {
     BarChart,
     Bar,
@@ -8,6 +10,13 @@ import {
     ResponsiveContainer,
     Tooltip,
 } from 'recharts';
+
+/**
+ * @description allow to customize chart's tooltip
+ * @param {boolean} active true if chart hover
+ * @param {array<object>} payload allow to customize legend
+ * @returns {ReactElement} 
+ */
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -21,8 +30,14 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
+/**
+ * @description component barChart that displays user's weight and calories burned depending on days
+ * @param {object} dataActivity
+ * @param {array<object>} dataActivity.sessions contains {day: number, calories: number, kilogram: number}
+ * @returns {ReactElement}
+ */
+
 const ActivityChart = ({ dataActivity }) => {
-    // console.log('data chart', dataActivity.sessions);
 
     return (
         <ResponsiveContainer height={190} width="100%">
@@ -87,7 +102,12 @@ const ActivityChart = ({ dataActivity }) => {
                 />
             </BarChart>
         </ResponsiveContainer>
-    );
+    )
 };
+
+ActivityChart.propTypes = {
+    dataActivity: PropTypes.object.isRequired,
+};
+
 
 export default ActivityChart;

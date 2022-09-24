@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
     Radar,
     RadarChart,
@@ -6,6 +7,13 @@ import {
     PolarAngleAxis,
     ResponsiveContainer,
 } from 'recharts';
+
+/**
+ * @description component radarChart that displays the user's performance: cardio, énergie, endurance, force, vitesse, intentisté
+ * @param {object} dataPerformance
+ * @param {array<object>} dataPerformance.performance contains {label: string, value: number}
+ * @returns {ReactElement}
+ */
 
 const PerformanceChart = ({dataPerformance}) => {
 
@@ -42,6 +50,10 @@ const PerformanceChart = ({dataPerformance}) => {
             </RadarChart>
         </ResponsiveContainer>
     );
+};
+
+PerformanceChart.propTypes = {
+    dataPerformance: PropTypes.object.isRequired,
 };
 
 export default PerformanceChart;
