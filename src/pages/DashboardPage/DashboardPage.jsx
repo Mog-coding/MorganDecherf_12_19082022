@@ -19,6 +19,11 @@ import AverageSessionsChart from '../../components/AverageSessionsChart/AverageS
 import PerformanceChart from '../../components/PerformanceChart/PerformanceChart';
 import { Loader } from '../../service/Loader/Loader';
 
+/**
+ * @description component page that shows four charts and keyDataBoard according user's datas
+ * @returns {ReactElement}
+ */
+
 const DashboardPage = () => {
     const { id } = useParams();
     const [userDatas, setUserDatas] = useState([]);
@@ -44,7 +49,6 @@ const DashboardPage = () => {
 
     return (
         <>
-            {console.log('comp render')}
             {!isLoading ? (
                 <>
                     <Header />
@@ -97,8 +101,8 @@ const DashboardPage = () => {
                                                 </p>
                                                 <div className="chartTodayLegend">
                                                     <p className="chartTodayLegendScore">{
-                                                    `${userDatas.todayScore * 100 }%`
-                                                        }</p>
+                                                        `${userDatas.todayScore * 100}%`
+                                                    }</p>
                                                     <p>de votre</p>
                                                     <p>objectif</p>
                                                 </div>

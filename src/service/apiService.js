@@ -2,9 +2,14 @@ import { UserModel } from '../models/userModel.js';
 import { ActivityModel } from '../models/activityModel.js';
 import { AverageSessionsModel } from '../models/averageSessionsModel.js';
 import { UserPerformance } from '../models/userPerformance.js';
-import { checkPropTypes } from 'prop-types';
 
 const endPoint = 'http://localhost:3000/user/';
+
+/**
+ * @description get user sessions data with url param userId
+ * @param {string} userId 
+ * @returns {object}
+ */
 
 export async function getUserSessions(userId) {
     const path = '/average-sessions';
@@ -26,6 +31,12 @@ export async function getUserSessions(userId) {
     }
 }
 
+/**
+ * @description get user data with url param userId
+ * @param {string} userId 
+ * @returns {object}
+ */
+
 export async function getUserDatas(userId) {
     const mocked = '/mockUser.json';
 
@@ -35,6 +46,12 @@ export async function getUserDatas(userId) {
     const { data } = await resp.json();
     return new UserModel(data);
 }
+
+/**
+ * @description get user activity data with url param userId
+ * @param {string} userId 
+ * @returns {object}
+ */
 
 export async function getUserActivity(userId) {
     const path = '/activity';
@@ -47,6 +64,12 @@ export async function getUserActivity(userId) {
     return new ActivityModel(data);
 }
 
+/**
+ * @description get user performance data with url param userId
+ * @param {string} userId 
+ * @returns {object}
+ */
+
 export async function getUserPerformance(userId) {
     const path = '/performance';
     const mocked = '/mockPerformance.json';
@@ -57,9 +80,3 @@ export async function getUserPerformance(userId) {
     const { data } = await resp.json();
     return new UserPerformance(data.data, data.kind);
 }
-
-/**
- * @description
- * @param {*} userId
- * @returns
- */

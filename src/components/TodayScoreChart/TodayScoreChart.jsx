@@ -51,7 +51,7 @@ const TodayScoreChart = ({ dataScore }) => {
 };
 
  TodayScoreChart.propTypes = {
-    dataScore: PropTypes.object.isRequired,
+    dataScore: PropTypes.number.isRequired,
 };
 
 export default TodayScoreChart;
