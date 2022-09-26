@@ -4,10 +4,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 /**
  * @description component chart that displays the user's goal score for the day
- * @param {number} dataScore today score
- * @returns {ReactElement}
  */
-
 const TodayScoreChart = ({ dataScore }) => {
    
     const data = [

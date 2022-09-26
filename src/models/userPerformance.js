@@ -1,9 +1,9 @@
 export class UserPerformance {
-    constructor(dataPerf, kind) {
-        if (dataPerf) {
-            this.performance = dataPerf.map((elPerf) => {
+    constructor(data) {
+        if (data.data) {
+            this.performance = data.data.map((elPerf) => {
                 return {
-                    label: this.translateLabel(kind[elPerf.kind]),
+                    label: this.translateLabel(data.kind[elPerf.kind]),
                     value: elPerf.value,
                 }
             })

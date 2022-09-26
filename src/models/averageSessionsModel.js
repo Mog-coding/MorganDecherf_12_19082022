@@ -7,7 +7,7 @@ export class AverageSessionsModel {
     }
 }
 
-class AverageSessions {
+export class AverageSessions {
     constructor(averageJSON) {
         this.sessions = averageJSON.map((el) => {
             return {

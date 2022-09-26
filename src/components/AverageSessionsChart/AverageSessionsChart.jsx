@@ -1,6 +1,7 @@
 import React from 'react';
 import './AverageSessionsChart.css';
 import PropTypes from 'prop-types';
+import { AverageSessions } from '../../models/averageSessionsModel';
 import {
     LineChart,
     Line,
@@ -16,7 +17,6 @@ import {
  * @param {array<object>} payload allow to customize legend
  * @returns {ReactElement}
  */
-
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
@@ -33,7 +33,6 @@ const CustomTooltip = ({ active, payload }) => {
  * @param {object} props object propertys allow to customize active dot
  * @returns {ReactElement}
  */
-
 const CustomizedDot = (props) => {
     const { cx, cy } = props;
     return (
@@ -51,11 +50,7 @@ const CustomizedDot = (props) => {
 
 /**
  * @description component lineChart that displays the duration of user sessions according to days
- * @param {object} dataSessions 
- * @param {array<object>} dataSessions.sessions contains {day: string, sessionLength: number}
- * @returns {ReactElement}
  */
-
 const AverageSessionsChart = ({ dataSessions }) => {
 
     return (
@@ -145,7 +140,7 @@ const AverageSessionsChart = ({ dataSessions }) => {
 };
 
 AverageSessionsChart.propTypes = {
-    dataSessions: PropTypes.object.isRequired,
+    dataSessions: PropTypes.instanceOf(AverageSessions).isRequired,
 };
 
 export default AverageSessionsChart;

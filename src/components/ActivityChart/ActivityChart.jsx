@@ -1,6 +1,7 @@
 import React from 'react';
 import './ActivityChart.css';
 import PropTypes from 'prop-types';
+import { Sessions } from '../../models/activityModel';
 import {
     BarChart,
     Bar,
@@ -17,7 +18,6 @@ import {
  * @param {array<object>} payload allow to customize legend
  * @returns {ReactElement} 
  */
-
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
@@ -32,11 +32,7 @@ const CustomTooltip = ({ active, payload }) => {
 
 /**
  * @description component barChart that displays user's weight and calories burned depending on days
- * @param {object} dataActivity
- * @param {array<object>} dataActivity.sessions contains {day: number, calories: number, kilogram: number}
- * @returns {ReactElement}
  */
-
 const ActivityChart = ({ dataActivity }) => {
 
     return (
@@ -106,8 +102,7 @@ const ActivityChart = ({ dataActivity }) => {
 };
 
 ActivityChart.propTypes = {
-    dataActivity: PropTypes.object.isRequired,
+    dataActivity: PropTypes.instanceOf(Sessions).isRequired,
 };
-
 
 export default ActivityChart;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { UserPerformance } from '../../models/userPerformance';
 import {
     Radar,
     RadarChart,
@@ -10,11 +11,7 @@ import {
 
 /**
  * @description component radarChart that displays the user's performance: cardio, énergie, endurance, force, vitesse, intentisté
- * @param {object} dataPerformance
- * @param {array<object>} dataPerformance.performance contains {label: string, value: number}
- * @returns {ReactElement}
  */
-
 const PerformanceChart = ({dataPerformance}) => {
 
     return (
@@ -53,7 +50,7 @@ const PerformanceChart = ({dataPerformance}) => {
 };
 
 PerformanceChart.propTypes = {
-    dataPerformance: PropTypes.object.isRequired,
+    dataPerformance: PropTypes.instanceOf(UserPerformance).isRequired,
 };
 
 export default PerformanceChart;

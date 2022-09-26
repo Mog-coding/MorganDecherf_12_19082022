@@ -7,7 +7,7 @@ export class ActivityModel {
     }
 }
 
-class Sessions {
+export class Sessions {
     constructor(sessionsJSON) {
         this.sessions = sessionsJSON.map((sessionEl) => {
             return {
