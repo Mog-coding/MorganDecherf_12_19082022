@@ -10,7 +10,6 @@ const endPoint = 'http://localhost:3000/user/';
  * @param {string} userId 
  * @returns {object}
  */
-
 export async function getUserSessions(userId) {
     const path = '/average-sessions';
     const mocked = 'http://localhost:3001/mockAverageSession.json';
@@ -36,15 +35,23 @@ export async function getUserSessions(userId) {
  * @param {string} userId 
  * @returns {object}
  */
-
 export async function getUserDatas(userId) {
     const mocked = 'http://localhost:3001/mockUser.json';
 
-    const resp = await fetch(
-        userId === 'mock' ? `${mocked}` : `${endPoint}${userId}`
-    );
-    const { data } = await resp.json();
-    return new UserModel(data);
+    try {
+        const resp = await fetch(
+            userId === 'mock' ? `${mocked}` : `${endPoint}${userId}`
+        );
+
+        if (resp.ok) {
+            const { data } = await resp.json();
+            return new UserModel(data);
+        } else {
+            throw new Error(resp.status);
+        }
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 /**
@@ -52,16 +59,24 @@ export async function getUserDatas(userId) {
  * @param {string} userId 
  * @returns {object}
  */
-
 export async function getUserActivity(userId) {
     const path = '/activity';
     const mocked = 'http://localhost:3001/mockActivity.json';
 
-    const resp = await fetch(
-        userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`
-    );
-    const { data } = await resp.json();
-    return new ActivityModel(data);
+    try {
+        const resp = await fetch(
+            userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`
+        );
+
+        if (resp.ok) {
+            const { data } = await resp.json();
+            return new ActivityModel(data);
+        } else {
+            throw new Error(resp.status);
+        }
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 /**
@@ -69,14 +84,22 @@ export async function getUserActivity(userId) {
  * @param {string} userId 
  * @returns {object}
  */
-
 export async function getUserPerformance(userId) {
     const path = '/performance';
     const mocked = 'http://localhost:3001/mockPerformance.json';
 
-    const resp = await fetch(
-        userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`
-    );
-    const { data } = await resp.json();
-    return new UserPerformance(data.data, data.kind);
+    try {
+        const resp = await fetch(
+            userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`
+        );
+
+        if (resp.ok) {
+            const { data } = await resp.json();
+            return new UserPerformance(data);
+        } else {
+            throw new Error(resp.status);
+        }
+    } catch (err) {
+        console.log(err);
+    }
 }
