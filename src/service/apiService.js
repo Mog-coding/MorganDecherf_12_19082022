@@ -13,7 +13,7 @@ const endPoint = 'http://localhost:3000/user/';
 
 export async function getUserSessions(userId) {
     const path = '/average-sessions';
-    const mocked = '/mockAverageSession.json';
+    const mocked = 'http://localhost:3001/mockAverageSession.json';
 
     try {
         const resp = await fetch(
@@ -38,7 +38,7 @@ export async function getUserSessions(userId) {
  */
 
 export async function getUserDatas(userId) {
-    const mocked = '/mockUser.json';
+    const mocked = 'http://localhost:3001/mockUser.json';
 
     const resp = await fetch(
         userId === 'mock' ? `${mocked}` : `${endPoint}${userId}`
@@ -55,7 +55,7 @@ export async function getUserDatas(userId) {
 
 export async function getUserActivity(userId) {
     const path = '/activity';
-    const mocked = '/mockActivity.json';
+    const mocked = 'http://localhost:3001/mockActivity.json';
 
     const resp = await fetch(
         userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`
@@ -72,7 +72,7 @@ export async function getUserActivity(userId) {
 
 export async function getUserPerformance(userId) {
     const path = '/performance';
-    const mocked = '/mockPerformance.json';
+    const mocked = 'http://localhost:3001/mockPerformance.json';
 
     const resp = await fetch(
         userId === 'mock' ? `${mocked}` : `${endPoint}${userId}${path}`
