@@ -21,9 +21,7 @@ import { Loader } from '../../service/Loader/Loader';
 
 /**
  * @description component page that shows four charts and keyDataBoard according user's datas
- * @returns {ReactElement}
  */
-
 const DashboardPage = () => {
     const { id } = useParams();
     const [userDatas, setUserDatas] = useState([]);

@@ -50,7 +50,7 @@ const PerformanceChart = ({dataPerformance}) => {
 };
 
 PerformanceChart.propTypes = {
-    dataPerformance: PropTypes.instanceOf(UserPerformance).isRequired,
+    dataPerformance: PropTypes.instanceOf(UserPerformance).isRequired
 };
 
 export default PerformanceChart;

@@ -6,9 +6,7 @@ import SideMenu from '../../components/SideMenu/SideMenu';
 
 /**
  * @description component page that allow to access dashboard page according users, with mocked or fetched data.
- * @returns {ReactElement}
  */
-
 const HomePage = () => {
     return (
         <>

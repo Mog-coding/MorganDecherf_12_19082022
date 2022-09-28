@@ -13,9 +13,6 @@ import {
 
 /**
  * @description allow to customize chart's tooltip
- * @param {boolean} active true if chart hover
- * @param {array<object>} payload allow to customize legend
- * @returns {ReactElement}
  */
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -36,7 +33,6 @@ const CustomTooltip = ({ active, payload }) => {
 const CustomizedDot = (props) => {
     const { cx, cy } = props;
     return (
-
         <circle
             cx={cx}
             cy={cy}
@@ -140,7 +136,14 @@ const AverageSessionsChart = ({ dataSessions }) => {
 };
 
 AverageSessionsChart.propTypes = {
-    dataSessions: PropTypes.instanceOf(AverageSessions).isRequired,
+    dataSessions: PropTypes.instanceOf(AverageSessions).isRequired
 };
+CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array
+}
+CustomizedDot.propTypes = {
+    props: PropTypes.object
+}
 
 export default AverageSessionsChart;

@@ -14,9 +14,6 @@ import {
 
 /**
  * @description allow to customize chart's tooltip
- * @param {boolean} active true if chart hover
- * @param {array<object>} payload allow to customize legend
- * @returns {ReactElement} 
  */
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -102,7 +99,11 @@ const ActivityChart = ({ dataActivity }) => {
 };
 
 ActivityChart.propTypes = {
-    dataActivity: PropTypes.instanceOf(Sessions).isRequired,
+    dataActivity: PropTypes.instanceOf(Sessions).isRequired
 };
+CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array
+}
 
 export default ActivityChart;

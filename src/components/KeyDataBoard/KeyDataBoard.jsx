@@ -11,7 +11,6 @@ import PropTypes from 'prop-types';
  * @description contains all datas of KeyData's component except keyData value 
  * @type {{name: string, unit: string, icon: string}} 
  */
-
 const dataKey = [
     {
         name: 'calories',
@@ -37,10 +36,7 @@ const dataKey = [
 
 /**
  * @description Component that imbricate severals keyData component's to form a keyData board
- * @param {object} dataUser - value of keyData
- * @returns {ReactElement}
  */
-
 const KeyDataBoard = ({ dataUser }) => {
 
     return (
@@ -64,7 +60,7 @@ const KeyDataBoard = ({ dataUser }) => {
 };
 
 KeyDataBoard.propTypes = {
-     dataUser: PropTypes.object.isRequired,
+     dataUser: PropTypes.object.isRequired
 };
 
 export default KeyDataBoard;
