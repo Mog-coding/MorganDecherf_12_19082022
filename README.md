@@ -1,3 +1,44 @@
+![SportSee logo](public/logo/logo.png) 
+
+**SportSee** is a startup dedicated to sports coaching, in full growth, the company launches a new version of the user's profile page. 
+
+This page allows the user to follow the number of sessions performed as well as the number of calories burned.
+
+## Project architecture
+This Project has been developped with Create React App and Recharts librairie.
+
+Two repositories are necessary to launch the project, back-end project and front-end project. 
+
+Note that you can launch only the Front-End with mocked data and without the Back-End: Skip step 1 and launch directly the Front-End project and choose the button 'donnée mock'.
+
+## 1. Launch Back-End
+
+
+### Prerequisites
+
+- [NodeJS (**version 12.18**)](https://nodejs.org/en/)
+
+If you are working with several versions of NodeJS, we recommend you install [nvm](https://github.com/nvm-sh/nvm). This tool will allow you to easily manage your NodeJS versions.
+
+### Launch the Back-End
+
+- Fork the [Back-End repository](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
+- Clone it on your computer
+- `npm i` // install dependencies 
+- `npm run dev` // run the micro API
+
+Back-End will run on port 3000 http://localhost:3000
+
+
+## 2. Launch Front-End
+- Fork the [Front-End repository](https://github.com/Mog-coding/MorganDecherf_12_19082022)
+- Clone it on your computer
+- `npm i` // install dependencies 
+- `npm start` // run the micro API
+
+Front-End will run on port 3001 http://localhost:3001
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
