@@ -52,10 +52,6 @@ const ActivityChart = ({ dataActivity }) => {
                     orientation="left"
                     dataKey="calories"
                     type="number"
-                    domain={[
-                        (dataMin) => Math.floor(0.9 * dataMin),
-                        (dataMax) => Math.ceil(1.03 * dataMax),
-                    ]}
                     hide="true"
                 />
                 <YAxis
@@ -67,8 +63,8 @@ const ActivityChart = ({ dataActivity }) => {
                     tickMargin={30}
                     stroke="#9b9eac"
                     domain={[
-                        (dataMin) => Math.floor(0.98 * dataMin),
-                        (dataMax) => Math.ceil(1.01 * dataMax),
+                        (dataMin) => dataMin -2,
+                        (dataMax) => dataMax +2,
                     ]}
                 />
                 <Tooltip
